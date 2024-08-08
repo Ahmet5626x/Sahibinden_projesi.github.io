@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahibinden</title>
+    <link rel="stylesheet" href="alım.css">
+    <link rel="stylesheet" href="araba.css">
+    <link rel="stylesheet" href="iletişim.css">
+    <link rel="website icon" type="png" href="s.png">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="header">
+                <img src="logo.jpg" alt="Başlık Resmi">
+                <select id="languageSelect" onchange="changeLanguage()">
+                    <option value="en" data-en="English" data-tr="İngilizce">English</option>
+                    <option value="tr" data-en="Turkish" data-tr="Türkçe">Turkish</option>
+                </select>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="anasayfa.html" class="menu-item" data-tr="Anasayfa" data-en="Home"><b>Anasayfa</b></a></li>
+                    <li><a href="ev.html" class="menu-item" data-tr="Ev" data-en="House"><b>Ev</b></a></li>
+                    <li><a href="arsa.html" class="menu-item" data-tr="Arsa" data-en="Land"><b>Arsa</b></a></li>
+                    <li><a href="araba.html" class="menu-item" data-tr="Araba" data-en="Car"><b>Araba</b></a></li>
+                    <li><a href="iletişim.html" class="menu-item" data-tr="İletişim" data-en="Contact"><b>İletişim</b></a></li>
+                    <button class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()"></button>
+                  </ul>
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <main>
+            <section class="contact">
+                <div class="contact-info">
+                    <h2>Bize Ulaşın</h2>
+                    <p data-tr="Aİletişim için yandaki formu doldurabilir veya doğrudan aşağıdaki iletişim bilgilerinden birini kullanabilirsiniz:" data-en="To contact us, you can fill out the form on the side or directly use one of the contact information below:">İletişim için yandaki formu doldurabilir veya doğrudan aşağıdaki iletişim bilgilerinden birini kullanabilirsiniz:</p>
+                    <p><strong data-tr="E-posta:" data-en="E-mail:">E-posta:</strong> <a href="mailto:mobildestek@sahibinden">mobildestek@sahibinden</a></p>
+                    <p><strong data-tr="Telefon:" data-en="Telephone:">Telefon:</strong><a href="tel:0850-222-44-44" target="_blank">0(850) 222 44 44</a></p>
+                    <p><strong>İnstagram:</strong><a href="https://www.instagram.com/Sahibindencom" target="_blank">Sahibindencom</a></p>
+                </div>
+                <div class="contact-form">
+                    <h2>Mesaj Gönder</h2>
+                    <form id="contact-form" action="submit.php" method="post" onsubmit="return showThankYouMessage()">
+                        <div class="form-group">
+                            <label for="name" data-tr="İsim ve Soyisim:" data-en="Name and Surname:">İsim ve Soyisim:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-tr="E-posta Adresi:" data-en="E-mail address:">E-posta Adresi:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-tr="Mesajınız:" data-en="Your Message:">Mesajınız:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" data-tr="Gönder:" data-en="Send:">Gönder</button>
+                    </form>
+                    <div id="thank-you-message" style="display: none; background-color: #f0f0f0; border: 1px solid #ddd; padding: 20px;" 
+                     data-tr="Teşekkürler! Mesajınız başarıyla gönderildi." data-en="Thanks! Your message has been sent successfully.">
+                        Teşekkürler! Mesajınız başarıyla gönderildi.
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            &copy; <b><i>Ahmet ŞEN</i></b>
+        </footer>
+        <script>
+            // Dark Mode ve Dil tercihlerinin yerel depolamadan yüklenmesi
+            document.addEventListener("DOMContentLoaded", function() {
+                // Dark Mode kontrolü ve uygulanması
+                let isDarkMode = localStorage.getItem("darkMode") === "true";
+                if (isDarkMode) {
+                    document.body.classList.add("dark-mode");
+                }
+                // Dil kontrolü ve uygulanması
+                const savedLanguage = localStorage.getItem("language") || "tr";
+                document.getElementById("languageSelect").value = savedLanguage;
+                const elements = document.querySelectorAll("[data-tr]");
+                elements.forEach(element => {
+                    element.innerHTML = element.getAttribute(`data-${savedLanguage}`);
+                });
+            });
+            // Dark Mode değiştiricisi
+            function toggleDarkMode() {
+                let isDarkMode = document.body.classList.toggle("dark-mode");
+                localStorage.setItem("darkMode", isDarkMode);
+            }
+            // Dil değiştiricisi
+            function changeLanguage() {
+                const language = document.getElementById("languageSelect").value;
+                localStorage.setItem("language", language);
+                const elements = document.querySelectorAll("[data-tr]");
+                elements.forEach(element => {
+                    element.innerHTML = element.getAttribute(`data-${language}`);
+                });
+            }
+        </script>
+    </div>
+    <script>
+        function showThankYouMessage() {
+            document.getElementById("thank-you-message").style.display = "block";
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahibinden</title>
+    <link rel="stylesheet" href="alım.css">
+    <link rel="stylesheet" href="araba.css">
+    <link rel="website icon" type="png" href="s.png">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="header">
+                <img src="logo.jpg" alt="Başlık Resmi">
+                <select id="languageSelect" onchange="changeLanguage()">
+                    <option value="en" data-en="English" data-tr="İngilizce">English</option>
+                    <option value="tr" data-en="Turkish" data-tr="Türkçe">Turkish</option>
+                </select>
+            </div>
+            <div class="menu">
+                <ul>
+                  <li><a href="anasayfa.html" class="menu-item" data-tr="Anasayfa" data-en="Home"><b>Anasayfa</b></a></li>
+                  <li><a href="ev.html" class="menu-item" data-tr="Ev" data-en="House"><b>Ev</b></a></li>
+                  <li><a href="arsa.html" class="menu-item" data-tr="Arsa" data-en="Land"><b>Arsa</b></a></li>
+                  <li><a href="araba.html" class="menu-item" data-tr="Araba" data-en="Car"><b>Araba</b></a></li>
+                  <li><a href="iletişim.html" class="menu-item" data-tr="İletişim" data-en="Contact"><b>İletişim</b></a></li>
+                  <button class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()"></button>
+                </ul>
+            </div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/bugatti.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2 >Bugatti Chiron</h2>
+                            <div class="description">
+                                <p><strong">Fiyat:</strong> 165.000.000 TL <br>
+                                <h3><a href="image/bugatti.jpg" >Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/ferrari.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2>FERRARİ 458</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 18.750,000<br>
+                                <h3><a href="image/ferrari.jpg">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/bmw.png" >
+                        </div>
+                        <div class="content">
+                            <h2>BMW</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 1.455.000 TL <br>
+                                <h3><a href="image/bmw.png">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/araba3.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2>2.EL ARAÇ</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 100.000 TL <br>
+                                <h3><a href="image/araba3.jpg">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/araba2.png" >
+                        </div>
+                        <div class="content">
+                            <h2>FORD PUMA</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 1.320.000 TL <br>
+                                <h3><a href="image/araba2.png">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/porshe.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2>PHORSHE 2024</h2>
+                            <div class="description">
+                                <p><strong>fiyat:</strong> 3.900.000 TL <br>
+                                <h3><a href="image/porshe.jpg">Yakıından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/araba7.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2>VOLVO</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 3.900.000 TL <br>
+                                <h3><a href="image/araba7.jpg">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/tog.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2>TOG</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 1.695.000 TL <br>
+                                <h3><a href="image/tog.jpg">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <div class="box">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="image/araba1.jpg" >
+                        </div>
+                        <div class="content">
+                            <h2>DACİA DUSTER 2022</h2>
+                            <div class="description">
+                                <p><strong>Fiyat:</strong> 835.000 TL <br>
+                                <h3><a href="image/araba1.jpg">Yakından Bak</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buy-button" onclick="sendOrder()" data-tr="Teklif Ver" data-en="Make Offer">Teklif Ver</button>
+                </div>
+                <script>
+                    function sendOrder() {
+                        const language = document.getElementById("languageSelect").value;
+                        const messages = {
+                            tr: "Mesajınız gönderildi. En kısa zamanda size dönüş yapılacaktır. Teşekkürler.",
+                            en: "Your message has been sent. We will get back to you as soon as possible. Thanks."
+                        };
+                        let message = messages[language] || messages.tr;
+                        alert(message);
+                    }
+                </script>
+            </div>
+    </div>
+        <footer class="footer">
+            &copy; <b><i>Ahmet ŞEN</i></b>
+        </footer>
+        <script>
+            // Dark Mode ve Dil tercihlerinin yerel depolamadan yüklenmesi
+            document.addEventListener("DOMContentLoaded", function() {
+                // Dark Mode kontrolü ve uygulanması
+                let isDarkMode = localStorage.getItem("darkMode") === "true";
+                if (isDarkMode) {
+                    document.body.classList.add("dark-mode");
+                }
+                // Dil kontrolü ve uygulanması
+                const savedLanguage = localStorage.getItem("language") || "tr";
+                document.getElementById("languageSelect").value = savedLanguage;
+                const elements = document.querySelectorAll("[data-tr]");
+                elements.forEach(element => {
+                    element.innerHTML = element.getAttribute(`data-${savedLanguage}`);
+                });
+            });
+            // Dark Mode değiştiricisi
+            function toggleDarkMode() {
+                let isDarkMode = document.body.classList.toggle("dark-mode");
+                localStorage.setItem("darkMode", isDarkMode);
+            }
+            // Dil değiştiricisi
+            function changeLanguage() {
+                const language = document.getElementById("languageSelect").value;
+                localStorage.setItem("language", language);
+                const elements = document.querySelectorAll("[data-tr]");
+                elements.forEach(element => {
+                    element.innerHTML = element.getAttribute(`data-${language}`);
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

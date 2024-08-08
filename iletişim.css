@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style the main content area */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the contact section */
+.contact {
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the contact section */
+    display: flex;
+    justify-content: space-between; /* Space between the two columns */
+    margin: 20px 0; /* Margin to add spacing around the contact section */
+}
+
+/* Style the contact info and form */
+.contact-info, .contact-form {
+    width: 48%; /* Width for each column to fit side by side */
+    padding: 20px;
+    color: black;
+    background-color: yellow;
+    box-sizing: border-box;
+}
+
+.contact-form {
+    background-color: yellow;
+    color: black;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+    color: black;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #d9d9e0;
+    border-radius: 4px;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #061493;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.contact-form label {
+    margin-top: 20px;
+}
+
+.contact-form textarea {
+    margin-top: 10px;
+}

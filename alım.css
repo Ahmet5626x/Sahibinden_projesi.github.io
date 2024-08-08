@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(241, 241, 239);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+.menu {
+    display: flex;
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: yellow;
+    display: flex; /* Flexbox ile hizalama */
+    justify-content: center; /* Menü öğelerini ortala */
+    align-items: center; /* Menü öğelerini dikey olarak ortala */
+    height: 60px; /* Yükseklik ayarı */
+    width: 100%; /* Genişlik ayarı */
+    margin: 0; /* Varsayılan margin'i sıfırla */
+    transform: scale(1,1);
+}
+
+
+.menu ul li {
+    margin: 0 10px;
+    padding: 10px 15px;
+    background-color: yellow;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.box {
+    flex-basis: calc(33.33% - 20px); /* Her kutunun genişliği */
+    padding: 20px;
+    border: 1px solid #747574;
+    border-radius: 5px;
+    background-color: yellow;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: relative; /* Butonun pozisyonunu ayarlamak için */
+}
+
+.box:nth-child(3n) {
+    margin-right: 0; /* Her üçüncü kutunun sağ kenar boşluğunu sıfırla */
+}
+
+.box img {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 100%;
+    height: 60%;
+}
+
+.box h2 {
+    margin-top: 0;
+}
+
+.box p {
+    margin-bottom: 0;
+}
+
+.buy-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1100ff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #03fd10;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+/* Footer ile sayfadaki içerikler arasında boşluk oluştur */
+.content {
+    margin-bottom: 60px; /* Footer'in yüksekliği kadar boşluk bırak */
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 20px; /* Padding değerini arttırdım */
+    }
+    
+    header h1 {
+        font-size: 24px; /* Başlık boyutunu küçülttüm */
+    }
+
+    .menu ul li {
+        padding: 8px 12px; /* Seçeneklerin padding değerini küçülttüm */
+    }
+
+    .menu ul li a {
+        font-size: 10px; /* Seçeneklerin metin boyutunu küçülttüm */
+    }
+    .box {
+        flex-basis: calc(100% - 600px); /* Küçük ekranlarda kutuların genişliğini %100 yap */
+        padding: 5px; /* Kutuların padding değerini küçült */
+    }
+
+    .box img {
+        height: auto; /* Küçük ekranlarda resimlerin yükseklik ayarını otomatik yap */
+    }
+
+    .buy-button {
+        padding: 2px 3px; /* Butonun padding değerini küçült */
+    }
+}
+
+/* Orta boy ekranlar için stil tanımları */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+    .box {
+        flex-basis: calc(100% - 1024px); /* Orta ekranlarda kutuların genişliğini %50 yap */
+    }
+}
+
+/* Büyük ekranlar için stil tanımları */
+@media only screen and (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+    }
+    .box {
+        flex-basis: calc(33.33% - 20px); /* Büyük ekranlarda kutuların genişliğini %33.33 yap */
+    }
+}
